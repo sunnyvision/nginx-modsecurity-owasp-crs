@@ -23,3 +23,4 @@ RUN cd /opt/owasp-modsecurity-crs && \
 
 ADD modsecurity.conf /etc/nginx/conf.d/modsecurity.d/modsecurity.conf
 
+ADD unicode.mapping /etc/nginx/conf.d/modsecurity.d/unicode.mapping
