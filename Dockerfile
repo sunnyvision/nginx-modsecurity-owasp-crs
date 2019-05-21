@@ -1,7 +1,7 @@
 FROM owasp/modsecurity:3-nginx
 MAINTAINER Michael Tam michaeltam@sunnyvision.com
 
-ARG COMMIT=v3.2/dev
+ARG COMMIT=v3.1.0
 ARG REPO=SpiderLabs/owasp-modsecurity-crs
 
 ENV PARANOIA=1
