@@ -17,7 +17,9 @@ RUN cd /opt && \
 RUN cd /opt/owasp-modsecurity-crs && \
 	mkdir /etc/nginx/conf.d/modsecurity.d && \
 	cp -R /opt/owasp-modsecurity-crs /etc/nginx/conf.d/modsecurity.d/owasp-crs/ && \
-	mv crs-setup.conf.example /etc/nginx/conf.d/modsecurity.d/modsecurity.conf && \
+	mv crs-setup.conf.example /etc/nginx/conf.d/modsecurity.d/crs-setup.conf && \
 	cd /etc/nginx/conf.d/modsecurity.d && \
-	printf "include modsecurity.d/owasp-crs/modsecurity.conf\ninclude modsecurity.d/owasp-crs/rules/*.conf" > include.conf
+	printf "include modsecurity.conf\ninclude crs-setup.conf\ninclude owasp-crs/rules/*.conf" > include.conf
+
+ADD modsecurity.conf /etc/nginx/conf.d/modsecurity.d/modsecurity.conf
 
